@@ -37,8 +37,9 @@ export default function TTSPage() {
         );
         setVoices(filtered);
 
-        const defaultVoice = filtered.find((v) =>
-          v.languageCodes.includes("en-US"),
+        const defaultVoice = filtered.find(
+          (v: { languageCodes: string | string[] }) =>
+            v.languageCodes.includes("en-US"),
         );
         if (defaultVoice) {
           setLanguage("en-US");
